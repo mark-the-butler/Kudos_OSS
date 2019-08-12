@@ -2,7 +2,7 @@ from .middlewares import login_required
 from flask import Flask, json, g, request
 from app.kudo.service import Service as Kudo
 from app.kudo.schema import GithubRepoSchema
-from flask_cors import flask_cors
+from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
@@ -47,11 +47,11 @@ def update(repo_id):
   else:
     return json_response({'error': 'kudo not found'}, 404)
 
-@app.route("/kudo/<int:repo_id>", methods["DELETE"])
+@app.route("/kudo/<int:repo_id>", methods=["DELETE"])
 @login_required
 def delete(repo_id):
   kudo_service = Kudo(g.user)
-  if kudo_service.delete_kudo_for(repo_id)
+  if kudo_service.delete_kudo_for(repo_id):
     return json_response({})
   else:
     return json_response({'error': 'kudo not found'}, 404)
