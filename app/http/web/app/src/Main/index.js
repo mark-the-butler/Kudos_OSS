@@ -9,8 +9,8 @@ const Main = () => {
     return (
         <Router>
             <Security
-                issuer={''}
-                client_id={''}
+                issuer={'https://dev-575245.okta.com'}
+                client_id={'0oa13jw36tvq31ULg357'}
                 redirect_uri={'http://localhost:8080/implicit/callback'}
                 scope={['openid', 'profile', 'email']}>
 
