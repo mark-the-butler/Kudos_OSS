@@ -8,8 +8,6 @@ const client = axios.create({
 });
 
 const APIClient = (accessToken) => {
-    const accessToken = accessToken;
-
     const perform = async (method, resource, data) => {
         return client({
             method,
