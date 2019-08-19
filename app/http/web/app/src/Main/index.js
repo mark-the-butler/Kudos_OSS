@@ -9,9 +9,9 @@ const Main = () => {
     return (
         <Router>
             <Security
-                issuer={'https://dev-575245.okta.com'}
-                client_id={'0oa13jw36tvq31ULg357'}
-                redirect_uri={'http://localhost:8080/implicit/callback'}
+                issuer={''}
+                client_id={''}
+                redirect_uri={''}
                 scope={['openid', 'profile', 'email']}>
 
                 <Switch>
@@ -19,7 +19,7 @@ const Main = () => {
                     <Route path="/implicit/callback" component={ImplicitCallback} />
                     <SecureRoute path="/home" component={Home} />
                 </Switch>
-                </Security>
+            </Security>
         </Router>
     );
 };
